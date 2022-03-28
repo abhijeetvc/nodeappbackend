@@ -5,6 +5,6 @@ const db={}
 
 db.url=dbConfig.url
 db.mongoose=mongoose
-db.users=require('./user.model')
+db.users=require('./user.model')(mongoose)
 
 module.exports=db

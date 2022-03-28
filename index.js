@@ -41,6 +41,15 @@ app.use(express.json())
 //    res.send("Data Received Successfully!!!")
 // })
 
+const db=require("./app/model")
+
+db.mongoose.connect(db.url)
+.then(()=>{
+    console.log('Connected to Mongo Database!!!');
+})
+
+require("./app/routes/user.routes")(app)
+
 app.listen(port,()=>{
     console.log('Server Started!!!');
 })
